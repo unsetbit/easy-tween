@@ -1,0 +1,1 @@
+Tweening for any numerical JavaScript object property.
