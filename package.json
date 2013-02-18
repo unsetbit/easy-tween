@@ -1,7 +1,7 @@
 {
   "name": "easy-tween",
   "version": "0.1.0",
-  "description": "Tweening for any numerical JavaScript object property.",
+  "description": "Tweening for any numerical JavaScript object property",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {

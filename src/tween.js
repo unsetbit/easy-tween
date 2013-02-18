@@ -54,3 +54,5 @@ for(easingFuncName in easing){
 		tween[easingFuncName] = tween.bind(void 0, easing[easingFuncName]);
 	}
 }
+
+tween.easing = easing;
