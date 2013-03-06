@@ -1,3 +1,15 @@
+var requestAnimationFrame = window.requestAnimationFrame || 
+								window.mozRequestAnimationFrame ||
+                              	window.webkitRequestAnimationFrame || 
+                              	window.msRequestAnimationFrame || 
+                              	function(cb){return setTimeout(cb, 15);};
+
+var cancelAnimationFrame = 	window.cancelAnimationFrame || 
+								window.mozCancelAnimationFrame ||
+                              	window.webkitCancelAnimationFrame || 
+                              	window.msCancelAnimationFrame || 
+                              	function(timeout){return clearTimeout(timeout);};
+
 var tween = module.exports = function(easingFunc, obj, prop, targetValue, duration, callback){
 	duration = duration || 0;
 	
