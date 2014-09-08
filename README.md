@@ -1,7 +1,7 @@
 # Tweening for any numerical JavaScript object property.
 
 ## Main function
-Assuming you add `./dist/easyTween.js` in to a web application, you get a global easyTween function (you can also load it via AMD or CommonJS).
+Add `./dist/easyTween.js` to a web application to get a global easyTween function (you can also load it via AMD or CommonJS).
 
 `easyTween(easingFunc, obj, prop, targetValue, duration, callback)`
 * easingFunc - Any function in easyTween.easing
