@@ -1,14 +1,4 @@
-var requestAnimationFrame = window.requestAnimationFrame || 
-								window.mozRequestAnimationFrame ||
-                              	window.webkitRequestAnimationFrame || 
-                              	window.msRequestAnimationFrame || 
-                              	function(cb){return setTimeout(cb, 15);};
-
-var cancelAnimationFrame = 	window.cancelAnimationFrame || 
-								window.mozCancelAnimationFrame ||
-                              	window.webkitCancelAnimationFrame || 
-                              	window.msCancelAnimationFrame || 
-                              	function(timeout){return clearTimeout(timeout);};
+'use strict';
 
 var tween = module.exports = function(easingFunc, obj, prop, targetValue, duration, callback){
 	duration = duration || 0;
@@ -45,7 +35,7 @@ var tween = module.exports = function(easingFunc, obj, prop, targetValue, durati
 			animationRequestId = requestAnimationFrame(step);
 		} else {
 			obj[prop] = easingFunc(duration, startValue, valueDiff, duration);
-			callback && callback();
+			if(callback) callback();
 		}
 	}
 
@@ -58,7 +48,7 @@ var tween = module.exports = function(easingFunc, obj, prop, targetValue, durati
 };
 
 // Bind easing helpers
-var easing = require("./easing.js"),
+var easing = require('./easing.js'),
 	easingFuncName;
 
 for(easingFuncName in easing){

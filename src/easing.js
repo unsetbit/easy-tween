@@ -1,3 +1,5 @@
+'use strict';
+
 // Adapted from http://gizma.com/easing/ (which was created by Robert Penner)
 
 exports.linear = function(currentTime, startValue, changeInValue, totalTime) {
@@ -67,5 +69,5 @@ exports.exponentialInOut = function(currentTime, startValue, changeInValue, tota
 	
 	if(currentTime < 1) return changeInValue / 2 * Math.pow(2, 10 * (currentTime -1))  + startValue;
 
-	return changeInValue / 2 * (-Math.pow(2, -10 * --t) + 2) + startValue;
+	return changeInValue / 2 * (-Math.pow(2, -10 * --currentTime) + 2) + startValue;
 };

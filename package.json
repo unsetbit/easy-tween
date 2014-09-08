@@ -1,33 +1,31 @@
 {
   "name": "easy-tween",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Tweening for any numerical JavaScript object property",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
-    "grunt": "~0.3.17",
-    "grunt-hug": "~0.4.1"
+    "gulp": "^3.8.8",
+    "boilerplate-gulp": "^0.2.4"
   },
   "scripts": {
     "test": "echo 0"
   },
-  "engines": {
-    "node": "~0.8.0"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ozanturgut/easy-tween.git"
+    "url": "https://github.com/oztu/easy-tween.git"
   },
-  "keywords": [],
+  "keywords": ["tween", "transition"],
   "author": {
     "name": "Ozan Turgut",
     "email": "ozanturgut@gmail.com",
-    "url": "http://oztu.org"
+    "url": "http://ozan.io"
   },
   "licenses": [
     {
       "type": "Apache License 2.0",
-      "url": "https://github.com/ozanturgut/easy-tween/blob/master/LICENSE-APACHE2"
+      "url": "https://github.com/oztu/easy-tween/blob/master/LICENSE-APACHE2"
     }
   ]
 }

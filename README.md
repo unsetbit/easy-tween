@@ -1,12 +1,10 @@
-Tweening for any numerical JavaScript object property.
-
-It's early in development, here's some unofficial documentation:
+# Tweening for any numerical JavaScript object property.
 
 ## Main function
-Assuming you add `./dist/tween.js` in to a web application, you get a global createTween function (there's also `./dist/tween-module.js` which behaves as a nodejs module).
+Assuming you add `./dist/easyTween.js` in to a web application, you get a global easyTween function (you can also load it via AMD or CommonJS).
 
-`createTween(easingFunc, obj, prop, targetValue, duration, callback)`
-* easingFunc - Any function in createTween.easing
+`easyTween(easingFunc, obj, prop, targetValue, duration, callback)`
+* easingFunc - Any function in easyTween.easing
 * obj - the object whose property we want to tween
 * prop - the string property name
 * targetValue - the finalValue to tween to
@@ -16,12 +14,12 @@ Assuming you add `./dist/tween.js` in to a web application, you get a global cre
 This function returns an object with `resume` and `pause` methods, which do exactly what you would think they would do.
 
 ## Helpers
-`createTween.[EASING_FUNCTION_NAME]` are functions which behave just as createTween, except without the easingFunc property.
+`easyTween.[EASING_FUNCTION_NAME]` are functions which behave just as easyTween, except without the easingFunc property.
 
-`createTween.easing` contains all of the easing functions available, these can be used standalone for other purposes too, they're [simple tweening functions](http://gizma.com/easing/)
+`easyTween.easing` contains all of the easing functions available, these can be used standalone for other purposes too, they're [simple tweening functions](http://gizma.com/easing/)
 
 ## Easing Functions
-(these are in createTween.easing)
+(these are in easyTween.easing)
 * linear
 * quadraticIn
 * quadraticOut
@@ -38,9 +36,9 @@ This function returns an object with `resume` and `pause` methods, which do exac
 ## Example
 In this example we'll start a 10 second tween, pausing for 3 seconds after 5 seconds.
 ```javascript
-var tween = createTween(createTween.easing.cubicIn, myObject, "verticalWind", 100, 10 * 1000);
+var tween = easyTween(easyTween.easing.cubicIn, myObject, "verticalWind", 100, 10 * 1000);
 // This is the same as
-var tween = createTween.cubicIn(myObject, "verticalWind", 100, 10 * 1000);
+var tween = easyTween.cubicIn(myObject, "verticalWind", 100, 10 * 1000);
 
 setTimeout(function(){
     tween.pause();
@@ -49,3 +47,6 @@ setTimeout(function(){
         tween.resume();
     }, 5 * 1000);
 }, 3 * 1000);
+
+## Developing
+This project uses [boilerplate-gulp](https://github.com/oztu/boilerplate-gulp). Run 'gulp dev' to develop and have incremental builds, continuous testing, etc. Run 'gulp' to run regenerate the dist files. 
